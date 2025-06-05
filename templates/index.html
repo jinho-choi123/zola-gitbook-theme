@@ -24,6 +24,7 @@
 
   <!-- The loading of KaTeX is deferred to speed up page rendering -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+  {% endif %}
 
       {% endblock js %}
 
@@ -32,8 +33,10 @@
       <link rel="stylesheet" href="{{ get_url(path="book.css") | safe }}">
           {% if config.extra.katex_auto_render %}
           <!-- To automatically render math in text elements, include the auto-render extension: -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
       onload="renderMathInElement(document.body);"></script>
+        {% endif %}
+
       {% endblock css %}
 
       {% block extra_head %}
